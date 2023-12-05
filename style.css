@@ -360,6 +360,14 @@ header{
     .bx-materiais{
         width: 10rem;
     }
-
 }
 
+@media (max-width: 330px) and (max-height: 620px) {
+    .sessao_2 {
+        height: 235vh;
+    }
+
+    .sessao_3 {
+        height: 410vh;
+    }
+}
