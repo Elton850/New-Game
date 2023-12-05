@@ -129,8 +129,8 @@ header{
     font-family: 'Roboto';
     border: 2px solid white;
     border-radius: 5px;
-    margin-top: 1.5rem;
     padding: 1.5rem;
+    margin: 1rem;
     width: 15rem;
     display: flex;
     flex-direction: column;
@@ -322,3 +322,44 @@ header{
     }
 
 }
+
+@media (width < 390px) {
+    
+    .cabecalho{
+        justify-content: center;
+    }
+
+    .sessao_2{
+        height: 180vh;
+    }
+
+    .classes_permitidas h2{
+        font-size: 1.5rem;
+    }
+
+    .bx-classe:nth-child(1){
+        margin-bottom: -1rem;
+    }
+
+    .bx-classe:nth-child(2){
+        margin: 1rem;
+    }
+
+    .sessao_3{
+        height: 315vh;
+    }
+
+    .materiais-permitidos h2{
+        font-size: 1.5rem;
+    }
+
+    .bx-materiais-permitidos{
+        grid-template-columns: 1fr;
+    }
+
+    .bx-materiais{
+        width: 10rem;
+    }
+
+}
+
