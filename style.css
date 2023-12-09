@@ -31,6 +31,12 @@ header{
     text-align: center;
 }
 
+.cabecalho i{
+    display: none;
+    color: white;
+    cursor: pointer;
+}
+
 .menu a{
     position: relative;
     font-family: 'Poppins';
@@ -288,8 +294,29 @@ header{
 }
 
 @media (width < 650px) {
+
+    .cabecalho i{
+        display: inherit;
+        z-index: 1;
+    }
+
+    .img_rpg{
+        max-width: 6rem;
+    }
+
     .menu{
-        display: none;
+        text-align: center;
+        font-size: 0.75rem;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        padding-top: 3.5rem;
+        gap: 2rem;
+        top: 0%;
+        right: -100%;
+        background-color: #191834;
+        transition: 0.5s ease;
     }
 
     .caixa{
@@ -325,8 +352,19 @@ header{
 
 @media (width < 390px) {
     
-    .cabecalho{
-        justify-content: center;
+    .menu{
+        text-align: center;
+        font-size: 0.75rem;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        padding-top: 3.5rem;
+        gap: 2rem;
+        top: 0%;
+        right: -100%;
+        background-color: #191834;
+        transition: 0.5s ease;
     }
 
     .caixa{
@@ -356,7 +394,7 @@ header{
     }
 
     .materiais-permitidos h2{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .bx-materiais-permitidos{
