@@ -1,29 +1,51 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Obtém os links do menu de navegação
-    var homeLink = document.querySelector('a[href="#sessao_1"]');
-    var classesLink = document.querySelector('a[href="#sessao_2"]');
-    var materiaisLink = document.querySelector('a[href="#sessao_3"]');
+const linkHome = document.querySelector('a[href="#sessao_1"]');
+const linkClasse = document.querySelector('a[href="#sessao_2"]');
+const linkMaterial = document.querySelector('a[href="#sessao_3"]');
 
-    // Adiciona um evento de clique aos links
-    homeLink.addEventListener("click", function () {
-        scrollToSection("sessao_1");
-    });
+function GotoSection(sectionID) {
+    var sessao = document.getElementById(sectionID);
+    sessao.scrollIntoView({ behavior: 'smooth' });
+}
 
-    classesLink.addEventListener("click", function () {
-        scrollToSection("sessao_2");
-    });
-
-    materiaisLink.addEventListener("click", function () {
-        scrollToSection("sessao_3");
-    });
-
-    // Função para rolar para uma determinada seção
-    function scrollToSection(sectionId) {
-        var section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    }
+linkHome.addEventListener('click', function() {
+    GotoSection('sessao_1');
 });
+
+linkClasse.addEventListener('click', function() {
+    GotoSection('sessao_2');
+});
+
+linkMaterial.addEventListener('click', function() {
+    GotoSection('sessao_3');
+});
+
+// ----------------------------------------------------------------
+
+const barIcon = document.getElementById('bar-icon');
+const barMenu = document.getElementById('menu');
+
+let Active = true;
+
+function changeIconBar() {
+    barIcon.classList.remove('fa-bars');
+    barIcon.classList.add('fa-xmark');
+    barMenu.style.right = '0%';
+    Active = true;
+}
+
+function changeIconXmark() {
+    barIcon.classList.remove('fa-xmark');
+    barIcon.classList.add('fa-bars');
+    barMenu.style.right = '-100%';
+    Active = false;
+}
+
+function BarValidation() {
+    if (Active === false) {
+        changeIconBar();
+    } else {
+        changeIconXmark();
+    }
+}
+
+barIcon.addEventListener('click', BarValidation);
